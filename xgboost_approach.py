@@ -292,7 +292,6 @@ def data_pre_process_initial(train, test):
 
     return train.shape, test.shape
 
-
 # Breed data pre processing according to breed popularity
 def breed_data_pre_process(data_set):
     animal_breeds = ['LABRADOR RETRIEVER', 'GERMAN SHEPHERD', 'GOLDEN RETRIEVER', 'AMERICAN BULLDOG', 'BEAGLE',
@@ -487,9 +486,6 @@ train_original.drop('OutcomeType', axis=1, inplace=True)
 train_original.drop('Target', axis=1, inplace=True)
 
 train_2 = breed_data_pre_process(train_original)
-print("Train after breed pre process")
-print(train_2.shape)
-print(train_2.describe)
 train_2 = pd.get_dummies(train_2,
                          columns=['month', 'day',
                                   'Is_Mixed', 'AgeuponOutcome_cat', 'sprayed', 'Type_sex', 'SexuponOutcome_cat',
